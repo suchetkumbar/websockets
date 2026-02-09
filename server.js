@@ -1,7 +1,7 @@
 import { request } from "http";
 import { WebSocketServer } from "ws";
 
-const wss = new WebSocketServer({port:808}); // Create a WebSocket server on port 8080
+const wss = new WebSocketServer({port:8080}); // Create a WebSocket server on port 8080
 
 // 0 : Connecting
 // 1 : Open (safely .send() can be used)
@@ -35,3 +35,10 @@ wss.on('connection',(socket,request)=>{
 });
 
 console.log("WebSocket server is running on ws://localhost:8080");
+
+/*
+const socket = new Websocket('ws://localhost:8080')
+    socket.onmessage = (event) => {console.log("message from server: ",event.data)}
+    socket.onopen = () => {socket.send("Hello from chrome console")} 
+// send message to server when connection is open
+*/
